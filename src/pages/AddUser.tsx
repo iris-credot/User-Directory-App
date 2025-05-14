@@ -22,17 +22,51 @@ const AddUser = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" value={form.name} onChange={handleChange} placeholder="Name" />
-      {errors.name && <p>{errors.name}</p>}
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl space-y-5"
+    >
+      <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">Add New User</h2>
 
-      <input name="email" value={form.email} onChange={handleChange} placeholder="Email" />
-      {errors.email && <p>{errors.email}</p>}
+      <div>
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Name"
+          className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+      </div>
 
-      <input name="age" value={form.age} onChange={handleChange} placeholder="Age" />
-      {errors.age && <p>{errors.age}</p>}
+      <div>
+        <input
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Email"
+          className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+      </div>
 
-      <button type="submit">Add User</button>
+      <div>
+        <input
+          name="age"
+          value={form.age}
+          onChange={handleChange}
+          placeholder="Age"
+          className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        {errors.age && <p className="text-red-500 text-sm mt-1">{errors.age}</p>}
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
+      >
+        Add User
+      </button>
     </form>
   );
 };
